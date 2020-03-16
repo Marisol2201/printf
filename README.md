@@ -1,10 +1,6 @@
 *0x11. C – printf*
 
-
-
 /This project is a summary of the C programming knowledge that Holberton School cohort 11 students have learned since the program began on January 27, 2020 /
-
-
 
 *Function prototype*
 
