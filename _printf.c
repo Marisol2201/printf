@@ -9,43 +9,52 @@
 int _printf(const char *format, ...)
 {
 
-	int i = 0, j = 0;
+	int i = 0, j = 0, count = 0;
 	va_list arg;
 
 	pt_t types[] = {
-		{"i", "int", print_int},
-		{"c", "int", print_char},
-		{"s", "char", print_string},
-		{"d", "int", print_decimal},
-		{"%", "%", print_percent},
-		{NULL, NULL, NULL}
+		{"i", print_int},
+		{"c", print_char},
+		{"s", print_string},
+		{"d", print_decimal},
+		{"%", print_percent},
+		{NULL, NULL}
 	};
 
 	va_start(arg, format);
 
-	while (*format)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+
+	while (format[i] != '\0')
 	{
-		if (*format == '%')
+		while ((format[i] != '%') && (format[i + 1] != '\0'))
 		{
-			format++;
+			_putchar(format[i]);
+			i++;
+			count++;
+		}
+
+		if (format[i] == '%')
+		{
+			i++;
+			j = 0;
 			while (types[j].test)
 			{
-				if (types[j].test[0] == *format)
+				if (types[j].test[0] == format[i])
 				{
-					types[j].printer(arg);
+					count = count + types[j].printer(arg);
 				}
 				j++;
 			}
 		}
-		else
-		{
-			_putchar(*format);
-		}
-		format++;
 		i++;
 	}
 
+	_putchar('\n');
+	count++;
+
 	va_end(arg);
 
-	return (i);
+	return (count);
 }

@@ -6,7 +6,7 @@
 * Return: always successful
 */
 
-void print_string(va_list arg)
+int print_string(va_list arg)
 {
 	char *str;
 
@@ -16,4 +16,6 @@ void print_string(va_list arg)
 		str = "(nil)";
 
 	_puts(str);
+
+	return (_strlen(str));
 }
