@@ -48,11 +48,14 @@ int _printf(const char *format, ...)
 				j++;
 			}
 		}
+		if (format[i] == '\n')
+			{
+				_putchar('\n');
+				count++;
+			}
+		
 		i++;
 	}
-
-	_putchar('\n');
-	count++;
 
 	va_end(arg);
 
