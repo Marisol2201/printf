@@ -39,4 +39,6 @@ int _strlen(char *s);
 
 int print_unknown(va_list arg);
 
+int print_rev(char *s);
+
 #endif

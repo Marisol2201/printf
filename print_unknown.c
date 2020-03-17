@@ -1,3 +1,4 @@
+
 #include "holberton.h"
 
 /**
@@ -8,10 +9,12 @@
 
 int print_unknown(va_list arg)
 {
-	char *str = "%r";
+	char *str;
 
-	(void)arg;
-	_puts(str);
+	str = va_arg(arg, char*);
 
-	return (_strlen(str));
+	if (str == NULL)
+		return (-1);
+
+	return (print_rev(str));
 }
