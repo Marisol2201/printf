@@ -6,7 +6,11 @@
  * Return: always successful
  */
 
-void print_int(va_list arg)
+int print_int(va_list arg)
 {
-	printf("%d", va_arg(arg, int));
+	int num = 0;
+
+	num = va_arg(arg, int);
+
+	return (_print_num(num));
 }
