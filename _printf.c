@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include "_function.h"
 
 /**
 * _printf - function to print all inputs
