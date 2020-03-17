@@ -3,16 +3,16 @@
 #include "holberton.h"
 
 /**
- * _print_num - this function prints decimal numbers
+ * _print_num - This function is print number
  *
- * @n: number printer
+ * @n: number to printer
  * Return: Description of the returned value
  */
 
-void _print_num(int n)
+int _print_num(int n)
 {
 
-	int  sign, exp;
+	int  sign, exp, i = 0;
 
 	exp = 1000000000;
 	sign = 1;
@@ -28,15 +28,21 @@ void _print_num(int n)
 			exp = exp / 10;
 		}
 		if (sign == 1)
+		{
 			_putchar('-');
+			i++;
+		}
 		while (exp >= 1)
 		{
 			_putchar(-(n / exp) + '0');
+			i++;
 			n = n % exp;
 			exp = exp / 10;
 		}
 	}
 	else
 		_putchar('0');
+
+	return (i);
 
 }
