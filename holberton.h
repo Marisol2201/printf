@@ -37,4 +37,6 @@ int print_percent(va_list arg);
 
 int _strlen(char *s);
 
+int print_unknown(va_list arg);
+
 #endif
