@@ -9,7 +9,7 @@
 
 int print_decimal(va_list arg)
 {
-	int num, count = 0;
+	int num, count = 1;
 
 	num = va_arg(arg, int);
 
