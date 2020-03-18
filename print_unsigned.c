@@ -11,7 +11,7 @@
 
 int print_unsigned(va_list arg)
 {
-	unsigned int num, count = 0, umin = 0;
+	unsigned int num, count = 1, umin = 0;
 
 	num = va_arg(arg, int);
 
