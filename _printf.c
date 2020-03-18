@@ -13,11 +13,11 @@ int _printf(const char *format, ...)
 	pt_t types[] = {
 		{"i", print_int}, {"c", print_char}, {"s", print_string},
 		{"d", print_decimal}, {"%", print_percent}, {"r", print_unknown},
-		{NULL, NULL}
+		{"b", print_binary}, {"u", print_unsigned}, {NULL, NULL}
 	};
 
 	va_start(arg, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
 	while (format[i] != '\0')
 	{

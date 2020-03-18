@@ -1,29 +1,27 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 
 /**
-* print_decimal - function to print char
+* print_unsigned - function to print unsigned int
 * @arg: va_list type
 * Return: always successful
 */
 
-int print_decimal(va_list arg)
+int print_unsigned(va_list arg)
 {
-	int num, count = 0;
+	unsigned int num, count = 0, umin = 0;
 
 	num = va_arg(arg, int);
 
-	if (num <= INT_MAX && num >= INT_MIN)
-		_print_num(num);
+	if (num <= UINT_MAX && num >= umin)
+		_print_num(-num);
 	else
 		return (-1);
 
-	if (num < 0)
-		{
-		count++;
-	}
 	while (num / 10)
-		{
+	{
 		num = num / 10;
 		count++;
 	}

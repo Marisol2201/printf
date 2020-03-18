@@ -31,7 +31,7 @@ int print_string(va_list arg);
 
 int print_decimal(va_list arg);
 
-int _print_num(int num);
+void _print_num(int num);
 
 int print_percent(va_list arg);
 
@@ -40,5 +40,9 @@ int _strlen(char *s);
 int print_unknown(va_list arg);
 
 int print_rev(char *s);
+
+int print_binary(va_list arg);
+
+int print_unsigned(va_list arg);
 
 #endif
